@@ -525,7 +525,7 @@ for p in personellistesi
 ///TURETILEMEZ
 ///TYPE CASTING (TIP KONTROLU YAPILAMAZ)
 ///AYNI NESNEYE FARKLI REFERANSLAR ILE ILETISIM
-
+/*
 struct structadi
 {
     
@@ -555,4 +555,66 @@ var ds = dikdortgen()
 ds.kisakenar = 33
 print(ds)
 
+*/
 
+///Struct Uygulama
+///kare dikdortgen ve daire sekillerini structlar kullanarak modelleme
+///
+///
+/*
+struct dikdortgen
+{
+    var kisakenar : Float
+    var uzunkenar : Float
+    var ortak : Ortak
+}
+
+struct kare
+{
+    var kenar : Float
+    var ortak : Ortak
+}
+
+struct daire
+{
+    var yaricap : Float
+    var ortak : Ortak
+}
+
+struct Ortak
+{
+    var cevre : Float
+    var alan : Float
+}
+
+var k = kare(kenar: 10, ortak: Ortak(cevre: 40, alan: 100))
+var di = dikdortgen(kisakenar: 10, uzunkenar: 20, ortak: Ortak(cevre: 60, alan: 200))
+//pi 3 alinacak
+var da = daire(yaricap: 10, ortak: Ortak(cevre: 60, alan: 300))
+print(k)
+print(di)
+print(da)
+*/
+
+///STRUCT MUTABLE YAPISI
+///degistirelemeyen func degiskenlerini func oncesine mutating yazarak degistirebiliriz
+struct kare
+{
+    var kenar : Float
+    var ortak : Ortak?
+    
+    mutating func ortakhesapla()
+    {
+        ortak = Ortak(cevre: kenar * 4 , alan: kenar * kenar)
+    }
+}
+
+struct Ortak
+{
+    var cevre : Float
+    var alan : Float
+}
+
+var k = kare(kenar: 100)
+k.ortakhesapla()
+print(k.ortak!.cevre)
