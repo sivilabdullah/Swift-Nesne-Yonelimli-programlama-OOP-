@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		584DBB7A28F56466007BFBBE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DBB7928F56466007BFBBE /* main.swift */; };
-		5887944B28F6C2EC008E4B12 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5887944A28F6C2EC008E4B12 /* File.swift */; };
+		5887945928F6C776008E4B12 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5887945828F6C776008E4B12 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		584DBB7428F56466007BFBBE /* CopyFiles */ = {
+		5887945328F6C776008E4B12 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,13 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		584DBB7628F56466007BFBBE /* Nesneye yonelik programlama(OOP) */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Nesneye yonelik programlama(OOP)"; sourceTree = BUILT_PRODUCTS_DIR; };
-		584DBB7928F56466007BFBBE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		5887944A28F6C2EC008E4B12 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		5887945528F6C776008E4B12 /* ileri swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ileri swift"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5887945828F6C776008E4B12 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		584DBB7328F56466007BFBBE /* Frameworks */ = {
+		5887945228F6C776008E4B12 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -40,67 +38,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		584DBB6D28F56466007BFBBE = {
+		5887944C28F6C776008E4B12 = {
 			isa = PBXGroup;
 			children = (
-				584DBB7828F56466007BFBBE /* Nesneye yonelik programlama(OOP) */,
-				584DBB7728F56466007BFBBE /* Products */,
+				5887945728F6C776008E4B12 /* ileri swift */,
+				5887945628F6C776008E4B12 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		584DBB7728F56466007BFBBE /* Products */ = {
+		5887945628F6C776008E4B12 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				584DBB7628F56466007BFBBE /* Nesneye yonelik programlama(OOP) */,
+				5887945528F6C776008E4B12 /* ileri swift */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		584DBB7828F56466007BFBBE /* Nesneye yonelik programlama(OOP) */ = {
+		5887945728F6C776008E4B12 /* ileri swift */ = {
 			isa = PBXGroup;
 			children = (
-				584DBB7928F56466007BFBBE /* main.swift */,
-				5887944A28F6C2EC008E4B12 /* File.swift */,
+				5887945828F6C776008E4B12 /* main.swift */,
 			);
-			path = "Nesneye yonelik programlama(OOP)";
+			path = "ileri swift";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		584DBB7528F56466007BFBBE /* Nesneye yonelik programlama(OOP) */ = {
+		5887945428F6C776008E4B12 /* ileri swift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 584DBB7D28F56466007BFBBE /* Build configuration list for PBXNativeTarget "Nesneye yonelik programlama(OOP)" */;
+			buildConfigurationList = 5887945C28F6C776008E4B12 /* Build configuration list for PBXNativeTarget "ileri swift" */;
 			buildPhases = (
-				584DBB7228F56466007BFBBE /* Sources */,
-				584DBB7328F56466007BFBBE /* Frameworks */,
-				584DBB7428F56466007BFBBE /* CopyFiles */,
+				5887945128F6C776008E4B12 /* Sources */,
+				5887945228F6C776008E4B12 /* Frameworks */,
+				5887945328F6C776008E4B12 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Nesneye yonelik programlama(OOP)";
-			productName = "Nesneye yonelik programlama(OOP)";
-			productReference = 584DBB7628F56466007BFBBE /* Nesneye yonelik programlama(OOP) */;
+			name = "ileri swift";
+			productName = "ileri swift";
+			productReference = 5887945528F6C776008E4B12 /* ileri swift */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		584DBB6E28F56466007BFBBE /* Project object */ = {
+		5887944D28F6C776008E4B12 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
-					584DBB7528F56466007BFBBE = {
+					5887945428F6C776008E4B12 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
 				};
 			};
-			buildConfigurationList = 584DBB7128F56466007BFBBE /* Build configuration list for PBXProject "Nesneye yonelik programlama(OOP)" */;
+			buildConfigurationList = 5887945028F6C776008E4B12 /* Build configuration list for PBXProject "ileri swift" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -108,30 +105,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 584DBB6D28F56466007BFBBE;
-			productRefGroup = 584DBB7728F56466007BFBBE /* Products */;
+			mainGroup = 5887944C28F6C776008E4B12;
+			productRefGroup = 5887945628F6C776008E4B12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				584DBB7528F56466007BFBBE /* Nesneye yonelik programlama(OOP) */,
+				5887945428F6C776008E4B12 /* ileri swift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		584DBB7228F56466007BFBBE /* Sources */ = {
+		5887945128F6C776008E4B12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				584DBB7A28F56466007BFBBE /* main.swift in Sources */,
-				5887944B28F6C2EC008E4B12 /* File.swift in Sources */,
+				5887945928F6C776008E4B12 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		584DBB7B28F56466007BFBBE /* Debug */ = {
+		5887945A28F6C776008E4B12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -191,7 +187,7 @@
 			};
 			name = Debug;
 		};
-		584DBB7C28F56466007BFBBE /* Release */ = {
+		5887945B28F6C776008E4B12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -244,7 +240,7 @@
 			};
 			name = Release;
 		};
-		584DBB7E28F56466007BFBBE /* Debug */ = {
+		5887945D28F6C776008E4B12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -255,7 +251,7 @@
 			};
 			name = Debug;
 		};
-		584DBB7F28F56466007BFBBE /* Release */ = {
+		5887945E28F6C776008E4B12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -269,25 +265,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		584DBB7128F56466007BFBBE /* Build configuration list for PBXProject "Nesneye yonelik programlama(OOP)" */ = {
+		5887945028F6C776008E4B12 /* Build configuration list for PBXProject "ileri swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				584DBB7B28F56466007BFBBE /* Debug */,
-				584DBB7C28F56466007BFBBE /* Release */,
+				5887945A28F6C776008E4B12 /* Debug */,
+				5887945B28F6C776008E4B12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		584DBB7D28F56466007BFBBE /* Build configuration list for PBXNativeTarget "Nesneye yonelik programlama(OOP)" */ = {
+		5887945C28F6C776008E4B12 /* Build configuration list for PBXNativeTarget "ileri swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				584DBB7E28F56466007BFBBE /* Debug */,
-				584DBB7F28F56466007BFBBE /* Release */,
+				5887945D28F6C776008E4B12 /* Debug */,
+				5887945E28F6C776008E4B12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 584DBB6E28F56466007BFBBE /* Project object */;
+	rootObject = 5887944D28F6C776008E4B12 /* Project object */;
 }

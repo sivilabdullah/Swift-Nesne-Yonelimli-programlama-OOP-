@@ -681,8 +681,10 @@ print(cinsiyet.Erkek.rawValue)
 */
 
 ///------------------------KALITIM--------------------
+///
 //Kalitim sayesinde elimizde bulunan classlari daha kisa ve pratik sekilde gelistirebiliyoruz
 //class olusturmak zorundayiz
+/*
 class kare : sekil // kalitim de sekil iki nokta class isminin yanina koyariz
 {
     var kenar : Float
@@ -712,6 +714,9 @@ class sekil
 {
     var cevre : Float?
     var alan : Float?
+    init
+    {}
+    
 }
 
 var k = kare(k: 100)
@@ -720,3 +725,430 @@ print(k.cevre)
 
 var d = dikdortgen(k: 100, u: 200)
 
+*/
+
+
+///KALITIM INITIALIZER ILISKISI
+///yukaridaki ornek ile ;
+///Kalitim alinan sinif ile kalitim alan sinifin contructore iliskileri ve birlikte kullanimini isleyecegiz
+/*
+class kare : sekil
+{
+    var kenar : Float
+    init(k: Float)
+    {
+        kenar = k
+        super.init(ks: 4)
+    }
+    func hesapla()
+    {
+        cevre = kenar * 4
+    }
+}
+
+class dikdortgen : sekil
+{
+    var kisakenar : Float
+    var uzunkenar : Float
+    
+    init(k : Float, u : Float)
+    {
+        kisakenar = k
+        uzunkenar = u
+        super.init()
+    }
+}
+
+class sekil
+{//birinci initin ici bos olabilir fakat ikinci bir initi kullanirken uygulama hangisini kullancagini bilmedigi icin hata alicaz bunu onlemek icin
+    var kenarsayisi : Int?
+    var cevre : Float?
+    var alan : Float?
+    init()
+    {}
+    init(ks : Int)
+    {
+        kenarsayisi = ks
+    }
+    
+}
+
+var k = kare(k: 100)
+k.hesapla()
+print(k.cevre ?? 11)
+
+var d = dikdortgen(k: 100, u: 200)
+print(d.kenarsayisi)
+print(k.kenarsayisi)
+*/
+///KALITIM INITIALIZER ILISKISI
+///uygulama ornegi
+///
+/*
+class Calisan
+{
+    var SicilNo : Int
+    var Adi     : String
+    var Soyadi  : String
+    init(sicilno : Int , adi : String , soyadi : String)
+    {
+        SicilNo = sicilno
+        Adi = adi
+        Soyadi = soyadi
+    }
+}
+
+class Yonetici : Calisan
+{
+    var EkipListesi = [Calisan]()
+}
+
+class MudurYardimcisi : Yonetici
+{
+    var SorumlulukDepartmani : String?
+}
+
+class Yazilimci : Calisan
+{
+    var ProjeAdi : String?
+    var ePosta   : String?
+}
+
+class TemizlikGorevlisi
+{
+    var GorevAlani : String?
+}
+
+class Mudur : Yonetici
+{
+    var Mudurluk : String?
+}
+
+var y = Yazilimci(sicilno: 134568, adi: "abdullah" , soyadi: "Sivil")
+print(y.Adi)
+print(y.Soyadi,y.SicilNo)
+
+*/
+
+///OVERRIDE KAVRAMI
+///GECERSIZ KILMA ANLAMINDADIR
+///Override , uretilen siniflarda Fonksiyonlari gecersiz kilma islemi icin kullanilir.
+/*
+class AnaSinif
+{
+    var D1 : Int
+    init(d1: Int) {
+        D1 = d1
+    }
+    
+    func f1()
+    {
+        print("ana sinif")
+    }
+}
+
+class AltSinif : AnaSinif
+{
+   // var D2 : Int
+    /*
+    init(d2 : Int)
+    {
+        super.init(D1: D2)
+        D2 = d2
+    }
+     */
+    
+    override init(d1: Int) {
+        super.init(d1: d1)
+    }
+    override func f1() {
+        super.f1()// ana fonksiyondaki fonksiyonu ekrana dahil edebilmek icin cagirdik
+        print("alt sinif")//override ana sinifdaki fonksiyonu iptal ederek buradaki fonksiyonu devreye sokuyor
+    }
+}
+
+var a = AltSinif(d1: 10)
+a.f1()
+*/
+
+
+///---------PROTOCOL KULLANIMI --------------------
+///PROTOKOLLERI OLUSTURMA VE UYGULAMA
+/// DIGER DILLERDE (INTERFACE ) DIYE GECER
+///Protokoller, standartlari olusturup bu protokolleri kullanan yapilarda bu standartlarin calismasini saglar
+/*
+protocol p1
+{
+    var d1 : Int {get set}
+    func f1()
+    init( c : String)
+}
+protocol p2
+{
+    func f2()
+}
+
+// protocol icinde init yazilmis ise struct icinde sadece init diyerek , class icinde basina required yazarak hatanin onune geceriz
+struct C1 : p1,p2 //classi struct olarak degistirdik
+{
+    func f2() {
+        //ikinci bir protokol kullanarak baska bir fonksiyonu struct icinde zorunlu kildik
+    }
+    
+    
+    //required anahtar kelimesi yukarida zorunlu kilinana intit oldugunu belirtir
+     init(c: String) {
+         
+         d1 = 0
+    }
+    
+    // protokol icindeki yapiyi mecburi bir sekilde kullanmak durumunda kaldik
+    var d1: Int
+    
+    func f1() {
+        
+    }
+    
+    init()
+    {
+        d1 = 0
+    }
+}
+*/
+
+///Kalitim konusundaki ornegi protocol kullanarak yaptik
+///
+/*
+protocol CalisanProtocol
+{
+    var SicilNo : Int {get set}
+    var Ad      : String {get set}
+    var Soyad   : String {get set}
+    
+    func IzinKullan()
+    
+}
+protocol YoneticiProtocol : CalisanProtocol
+{
+    func KontrolEt()
+}
+
+class Calisan : CalisanProtocol
+{
+    var SicilNo: Int
+    
+    var Ad: String
+    
+    var Soyad: String
+    
+    func IzinKullan() {
+
+    }
+    
+    init() {
+        SicilNo = 0
+        Ad = " "
+        Soyad = " "
+    }
+}
+
+class Mudur : YoneticiProtocol
+{
+    func KontrolEt() {
+    
+    }
+    
+    var SicilNo: Int
+    
+    var Ad: String
+    
+    var Soyad: String
+    
+    func IzinKullan() {
+        
+    }
+    init() {
+        SicilNo = 0
+        Ad = " "
+        Soyad = " "
+    }
+    
+}
+
+*/
+
+/*------------EXTENSION-------------*/
+/*
+//extension tipleri genisletmek ve ozelliklerini arttirmak icin kullanilir
+
+class Personel
+{
+    var Ad      : String
+    var Soyad   : String
+    init() {
+       Ad = ""
+       Soyad = ""
+    }
+}
+// ayni isimde class tanimlayamayiz onun yerine extension yazmamiz gerek
+extension Personel
+{   //convenience ifadesi asil classda tanimlanan init iceriklerini cagirabilmemize yarar
+    convenience init(v: Int)
+    {
+        self.init()
+    }
+}
+
+var per = Personel()
+
+protocol p1
+{
+    var p : Int {get set}
+}
+extension Personel : p1
+{
+    var p: Int {
+        get {
+            return 0
+        }
+        set {
+            
+        }
+    }
+}
+
+extension String
+{
+    func ToInt()->Int?
+    {
+        return Int(self)
+    }
+}
+var s = "10"
+var i = s.ToInt()
+print(i)
+*/
+
+/*----------Erişim Belirleyiciler------------*/
+///Erisim belirleyiciler ile yapilarin erisimlerinin kontrol altina alinmasi
+///
+//Kac Tane Erisim Belirleyici var Bakalim ;
+//OPEN
+///Her yerden erisilebilir
+///sadece classlarda ve class elemanlarinda kullanilabilir(Fonksiyon ve fieldlar )
+///structlarda kullanilmaz
+///import edilen tum proje ve moduller icinde turetilebilirler (anlatilicak)
+///open olan tum siniflarin elemanlari bu sinifi import eden tum modullerden override edilebilirler
+///kisitlamanin olmadigi erisim belirtecidir
+///ornek
+/*
+open class C1
+{
+    open var d1 = 9
+    open func f1()
+    {}
+}
+ */
+//PUBLIC
+///Her yerden erisilebilir
+///Tum yapilarda kullanilabilir
+///Sadece tanimlandigi target(Bir proje icerisinde kendi basina kullanilabilen kendi basina calisabilen yapilardir , kutuphane , uygulama vs) icinde turetim saglanabilir
+///Public tanimlanan sinif elemanlari sadece tanimlandigi target icinde override edilebilir.(over her yerden override edilebilir )
+
+
+//INTERNAL
+///Sadece tanimlandigi target icerisinden override edilebilir
+///tumyapilarda kullanilabilir
+///varsayilan erisim seviyesidir
+
+//FILE PRIVATE
+///Sadece tanimlandigi dosya icersinden kullanilabilir
+///Tum yapilarda kullanilabilir
+///Ayni dosyada farkli entiyler var ise erisebilir
+///ya da ayni entity'nin farkli dosylarda extansionlari var ise erisemez
+///yeni bir dosya acip fileprivate degisken ve siniflarini cagirdigimizde derleyici onlari goremeyecektir
+/*
+open class C1
+{
+    open var d1 = 9
+    fileprivate var d2 : Int?
+    open func f1()
+    {}
+}
+extension C1
+{
+    func f2()
+    {
+        d1 = 10
+        d2 = 20
+    }
+}
+ */
+
+//PRIVATE
+///sadece tanimlandigi entity(sinif, struct vb) icinde gecerlidir
+/// ayni entitynin farkli dosyalarda extensionlari var ise erisemez
+///
+open class C1
+{
+    open var d1 = 9
+    fileprivate var d2 : Int?
+    private var d4 : Int?
+    open func f1()
+    {}
+}
+extension C1
+{
+    func f2()
+    {
+        d1 = 10
+        d2 = 20
+        d4 = 40
+    }
+}
+var s = C1()
+//s.d4//d4 e erisemeyiz private oldugu icin
+
+/*---------Otomatik Referans Sayacı---Automatic reference counting----*/
+///Referans sayaclari bir nesnenin verisini kac tane referansin gosterdigi bilgisini tutar
+class personel
+{
+    var a : Int
+    
+    init()
+    {
+        a = 10
+    }
+    
+    init (s : Int)
+    {
+        a = s
+    }
+    deinit{
+        
+    }
+}
+/*
+var p1 = personel()
+//Referance Sayaci = 1
+var p1kopya = p1
+p1kopya.a = 20
+print(p1.a)
+print(p1kopya.a)*/
+
+func f1(s : personel)
+{ //RS = 3
+    _ = s
+ //RS = 4
+}
+func f2 ()
+{
+    var p = personel()
+    //RS = 1
+    var k = p
+    //RS = 2
+    f1(s: k)
+    //RS = 2 bellekten silindigi icin func f1 deki referan sayisi 2 azalir
+}
+f2()
+//RS = 0
