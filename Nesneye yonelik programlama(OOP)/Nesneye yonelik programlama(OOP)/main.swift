@@ -598,6 +598,7 @@ print(da)
 
 ///STRUCT MUTABLE YAPISI
 ///degistirelemeyen func degiskenlerini func oncesine mutating yazarak degistirebiliriz
+/*
 struct kare
 {
     var kenar : Float
@@ -618,3 +619,104 @@ struct Ortak
 var k = kare(kenar: 100)
 k.ortakhesapla()
 print(k.ortak!.cevre)
+*/
+
+///static degisken ve fonksiyonlar
+///sinif uzerinden fonksiyon ve fieldlara erisim
+///
+/*
+class personel
+{
+    var Ad : String
+    var Sicilno : Int
+  static  var SonPersonelNo = 0
+    init(ad: String) {
+        Ad = ad
+        Sicilno = personel.SicilHesapla()
+    }
+    static func SicilHesapla()->Int
+    {
+        SonPersonelNo += 1
+        return SonPersonelNo
+    }
+    
+    func BilgileriYaz()
+    {
+        print("ad : \(Ad)")
+        print("sicil no : \(Sicilno)\n")
+    }
+}
+
+var p1 = personel(ad: "ahmet")
+p1.BilgileriYaz()
+var p2 = personel(ad: "mehmet")
+p2.BilgileriYaz()
+*/
+
+
+///Enum
+///kod icerisindeki sabit degerlerin iceriginde ne oldugu bilinmese dahi ayni sekilde kullanilmasini saglar. okunabilir hale getirir.
+///
+///kullanici profilini yuklemezse default olarak kiz erkek durumuna gore resim yukleme
+/*
+enum cinsiyet : String
+{
+    case Erkek = "E"
+    case Kadin = "K"
+}
+
+var c = cinsiyet.Kadin
+if c == cinsiyet.Erkek
+{
+    print("erkek profil resmi kullan")
+}
+else
+{
+    print("kadin resmini kullan")
+}
+
+
+print(cinsiyet.Erkek)
+print(cinsiyet.Erkek.rawValue)
+*/
+
+///------------------------KALITIM--------------------
+//Kalitim sayesinde elimizde bulunan classlari daha kisa ve pratik sekilde gelistirebiliyoruz
+//class olusturmak zorundayiz
+class kare : sekil // kalitim de sekil iki nokta class isminin yanina koyariz
+{
+    var kenar : Float
+    init(k: Float)
+    {
+        kenar = k
+    }
+    func hesapla()
+    {
+        cevre = kenar * 4
+    }
+}
+
+class dikdortgen : sekil
+{
+    var kisakenar : Float
+    var uzunkenar : Float
+    
+    init(k : Float, u : Float)
+    {
+        kisakenar = k
+        uzunkenar = u
+    }
+}
+
+class sekil
+{
+    var cevre : Float?
+    var alan : Float?
+}
+
+var k = kare(k: 100)
+k.hesapla()
+print(k.cevre)
+
+var d = dikdortgen(k: 100, u: 200)
+
